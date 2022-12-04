@@ -50,15 +50,15 @@ public class PlayerMovement : MonoBehaviour
     
     
     
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        updateAngle(-1); // ???????????????????????????????????????????????????????????????????????
-        _posX = rotationCenter.position.x + Mathf.Cos(_angle) * rotationRadius;
-        _posY = rotationCenter.position.y + Mathf.Sin(_angle) * rotationRadius;
-        transform.position = new Vector3(_posX, _posY, 0);
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * _angle + initialAngle);
-        Debug.Log("hit hapanned");
-    }
+    // private void OnTriggerStay2D(Collider2D col)
+    // {
+    //     updateAngle(-1); // ???????????????????????????????????????????????????????????????????????
+    //     _posX = rotationCenter.position.x + Mathf.Cos(_angle) * rotationRadius;
+    //     _posY = rotationCenter.position.y + Mathf.Sin(_angle) * rotationRadius;
+    //     transform.position = new Vector3(_posX, _posY, 0);
+    //     transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * _angle + initialAngle);
+    //     Debug.Log("hit hapanned");
+    // }
     
     
     
@@ -90,13 +90,13 @@ public class PlayerMovement : MonoBehaviour
             move();
         }
         
-        if (Input.GetKey(KeyCode.Tab) & side == PlayerSide.Left)
+        if (Input.GetKey(KeyCode.W) & side == PlayerSide.Left)
         {
             updateAngle(1);
             move();
         } 
         
-        if (Input.GetKey(KeyCode.CapsLock)& side == PlayerSide.Left)  
+        if (Input.GetKey(KeyCode.S)& side == PlayerSide.Left)  
         {  
             updateAngle(-1);
             move();
