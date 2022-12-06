@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
     {
         float xPos = GetStartingConditions();
         transform.position = new Vector3(xPos, arenaHeight, 0f);
-        rbBall.AddForce(new Vector3(0, -66, 0));
+        rbBall.AddForce(new Vector3(0, -100, 0));
         
     }
     // Randomly chooses a location for the ball to start in
@@ -35,11 +35,11 @@ public class Ball : MonoBehaviour
         
         if (half == 1)
         {
-            return Random.Range(1f, 10f);
+            return Random.Range(1f, 5f);
         }
         else
         {
-            return Random.Range(-1f, -10f);
+            return Random.Range(-1f, -5f);
         }
 
     }
@@ -51,9 +51,6 @@ public class Ball : MonoBehaviour
     //     vel.y = (rbBall.velocity.y / 2) + (coll.collider.attachedRigidbody.velocity.y / 3);
     //     rbBall.velocity = vel;
     //     }
-        if(coll.collider.CompareTag("Paddle")){
-
         rbBall.AddForce(new Vector3(coll.contacts[0].normal.x * 100, coll.contacts[0].normal.y * 100, 0 ));
-        }
     }
 }
