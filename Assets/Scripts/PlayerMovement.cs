@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
  // Reference point, center of circle, should be the center of the arena (the position of the camera) 
     public Transform rotationCenter;
     private Vector3 _rotationPosition;
-    public Collider2D playerBounds;
     
     // The initial angle of the object, can be changed if needed
     public float initialAngle = 0;
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other == playerBounds)
+        if (other.CompareTag(tag = "player bounds"))
         {
             _keyDisabled[(_orientation-1)/-2][(int)(Mathf.Sign(_posY)-1)/-2] = true;
         }
@@ -60,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other == playerBounds)
+        if (other.CompareTag(tag = "player bounds"))
         {
             _keyDisabled[(_orientation - 1) / -2][(int)(Mathf.Sign(_posY) - 1) / -2] = false;
         }
