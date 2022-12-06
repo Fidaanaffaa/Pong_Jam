@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
  // Reference point, center of circle, should be the center of the arena (the position of the camera) 
     public Transform rotationCenter;
     private Vector3 _rotationPosition;
-
     public Collider2D playerBounds;
     
     // The initial angle of the object, can be changed if needed
