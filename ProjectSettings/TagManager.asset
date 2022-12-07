@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paddle
   - Goal
+  - player bounds
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class CircleArena : MonoBehaviour
     }
     private void Awake()
     {
-        edgeCollider2D.SetPoints(DrawCircle(20));
+        edgeCollider2D.SetPoints(DrawCircle(100));
     }
     // Start is called before the first frame update
     void Start()
