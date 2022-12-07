@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (coll.collider.tag == "Goal")
         {
-            if (coll.collider.transform.position.x < 0)
+            if (coll.collider.transform.position.x > 0)
             {
                 player1 += 1;
                 player1Score.text = "" + player1;                

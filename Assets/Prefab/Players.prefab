@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationCenter: {fileID: 0}
-  playerBounds: {fileID: 0}
   initialAngle: 0
   angularSpeed: 0
   rotationRadius: 0

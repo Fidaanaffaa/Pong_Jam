@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
     {
         float xPos = GetStartingConditions();
         transform.position = new Vector3(xPos, arenaHeight, 0f);
-        rbBall.AddForce(new Vector3(0, -100, 0));
+        rbBall.AddForce(new Vector3(0, -200, 0));
         
     }
     // Randomly chooses a location for the ball to start in
@@ -52,5 +52,6 @@ public class Ball : MonoBehaviour
     //     rbBall.velocity = vel;
     //     }
         rbBall.AddForce(new Vector3(coll.contacts[0].normal.x * 100, coll.contacts[0].normal.y * 100, 0 ));
+
     }
 }
