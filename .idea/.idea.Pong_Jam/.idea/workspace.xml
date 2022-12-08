@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="882ae454-0867-460c-8758-db58259e63f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pong_Jam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pong_Jam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/Circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Physics Material 2D.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Physics Material 2D.physicsMaterial2D" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/Players.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Players.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bowl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bowl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GoalLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GoalLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,9 @@
     <setting file="file://$PROJECT_DIR$/../../jam/Group_pong_f/My project/Assets/scripts/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ArenaCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bowl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enlarger1Up.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GoalElarge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shrinker1Up.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670323998456</updated>
       <workItem from="1670324019637" duration="10447000" />
-      <workItem from="1670492539802" duration="13512000" />
+      <workItem from="1670492539802" duration="25162000" />
     </task>
     <servers />
   </component>

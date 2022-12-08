@@ -9,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
  // Reference point, center of circle, should be the center of the arena (the position of the camera) 
     public Transform rotationCenter;
     private Vector3 _rotationPosition;
+    private float _maxScale = 10;
+    private float _minScale = 1;
+    private int _scaleIndex = 1;
+    public GameObject RivalGoal;
+    public GameObject MyGoal;
+    
     
     // The initial angle of the object, can be changed if needed
     public float initialAngle = 0;
@@ -47,6 +53,24 @@ public class PlayerMovement : MonoBehaviour
         _posX = rotationRadius * _orientation;
         _posY = 0;
         transform.position = new Vector3(_posX, _posY, 0);
+    }
+
+    public void SetNewScale(float parameter)
+    {
+        if (parameter > 0 & _maxScale > transform.localScale[_scaleIndex])
+        {
+            transform.localScale += Vector3.up * parameter;
+        }
+
+        if (parameter < 0 & _minScale < transform.localScale[_scaleIndex])
+        {
+            transform.localScale += Vector3.up * parameter;
+        }
+    }
+
+    public PlayerSide GetPlayerSide()
+    {
+        return side;
     }
     
     private void OnTriggerEnter2D(Collider2D other)

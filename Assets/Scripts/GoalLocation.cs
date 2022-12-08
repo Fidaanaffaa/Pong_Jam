@@ -20,6 +20,27 @@ public class GoalLocation : MonoBehaviour
     private float _circle;
     private float _insideArena = 0.95f;
     private float _angleOfPosition;   // TODO SET IN COMPOMEMTS
+    private GameObject _lastPlayerTouched = null;
+    private int _maxScale = 12;
+    private int _minScale = 2;
+
+    public void SetNewScale(float parameter)
+    {
+        if (parameter > 0 & _maxScale > transform.localScale[_scaleIndex])
+        {
+            transform.localScale += Vector3.up * parameter;
+        }
+
+        if (parameter < 0 & _minScale < transform.localScale[_scaleIndex])
+        {
+            transform.localScale += Vector3.up * parameter;
+        }
+    }
+    
+    public GameObject GetLastPlayerTouched()
+    {
+        return _lastPlayerTouched;
+    }
     void Start()
     {
         _scaleForPadding = transform.localScale[_scaleIndex] / 2 + _safetyParameter;
