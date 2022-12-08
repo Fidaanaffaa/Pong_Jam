@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1348239908235261037}
   - component: {fileID: 6619893871552788700}
-  - component: {fileID: 2584584933222460800}
   - component: {fileID: 1394887449866101283}
+  - component: {fileID: 7387135006044068949}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9433962, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.454902, g: 0.454902, b: 0.454902, a: 0.7176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2584584933222460800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8070801337056037000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca46001532fba9840b20d935527b2d2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  edgeCollider2D: {fileID: 1394887449866101283}
 --- !u!68 &1394887449866101283
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -121,3 +108,16 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7387135006044068949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070801337056037000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a380ac209b2e9254496b58c8ba17a5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeCollider2D: {fileID: 1394887449866101283}

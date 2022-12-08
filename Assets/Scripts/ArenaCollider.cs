@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleArena : MonoBehaviour
+public class ArenaCollider : MonoBehaviour
 {
     public EdgeCollider2D edgeCollider2D;
     List<Vector2> DrawCircle(int steps, float radius = 0.5f)
