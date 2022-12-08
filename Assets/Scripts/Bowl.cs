@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bowl : MonoBehaviour
 {
     private float arenaHeight = 10f;
-    public float ballSpeed = 1.0f;
+    private const float MinimalSpeed = 30f;
     private Rigidbody2D rbBall;
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,19 @@ public class Bowl : MonoBehaviour
     void Update()
     {
         
+        if (rbBall.velocity.magnitude <= MinimalSpeed)
+        {            
+            float totalVelocity = rbBall.velocity.magnitude;
+            rbBall.velocity = new Vector2(rbBall.velocity.x / totalVelocity * MinimalSpeed,
+                rbBall.velocity.y / totalVelocity * MinimalSpeed);
+        }
     }
 
     void DropBall()
     {
         float xPos = GetStartingConditions();
         transform.position = new Vector3(xPos, arenaHeight, 0f);
-        rbBall.AddForce(new Vector3(0, -300, 0));
+        rbBall.AddForce(new Vector3(0, -200, 0));
         
     }
     // Randomly chooses a location for the ball to start in
