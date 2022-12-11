@@ -10,7 +10,7 @@ public class GoalLocation : MonoBehaviour
     // Start is called before the first frame update
     public GoalSide Side;
     private float _scaleForPadding;
-    private float _safetyParameter = 1.5f;
+    private float _safetyParameter = 1.6f;
     private float _paddingAngle;
     private int _scaleIndex = 1;
     public float Radius;
@@ -21,8 +21,9 @@ public class GoalLocation : MonoBehaviour
     private float _insideArena = 0.95f;
     private float _angleOfPosition;   // TODO SET IN COMPOMEMTS
     private GameObject _lastPlayerTouched = null;
-    private int _maxScale = 12;
+    private int _maxScale = 25;
     private int _minScale = 2;
+    private int _delicateDistrabution = 1000000000;
 
     public void SetNewScale(float parameter)
     {
@@ -43,8 +44,7 @@ public class GoalLocation : MonoBehaviour
     }
     void Start()
     {
-        _scaleForPadding = transform.localScale[_scaleIndex] / 2 + _safetyParameter;
-        _paddingAngle = _scaleForPadding / Radius;
+        AdjustPaddingAngle();
         if (Side == GoalSide.Right)
         {
             _startAngle *= 3;
@@ -56,6 +56,12 @@ public class GoalLocation : MonoBehaviour
         transform.position = new Vector3(xPos, yPos, 0);
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * angle);
     }
+
+    private void AdjustPaddingAngle()
+    {
+        _scaleForPadding = transform.localScale[_scaleIndex] / 2 + _safetyParameter;
+        _paddingAngle = _scaleForPadding / Radius;
+    }
     
     public enum GoalSide
     {
@@ -65,7 +71,8 @@ public class GoalLocation : MonoBehaviour
 
     void DrawRandomPosition()
     {
-        float ang = Random.Range(_startAngle + _paddingAngle, _finishAngle - _paddingAngle);
+        AdjustPaddingAngle();
+        float ang = Random.Range((_startAngle + _paddingAngle)/_delicateDistrabution, (_finishAngle - _paddingAngle)/_delicateDistrabution) * _delicateDistrabution;
         float xPos = Radius * _insideArena * Mathf.Cos(ang);
         float yPos = Radius * _insideArena * Mathf.Sin(ang);
         transform.position = new Vector3(xPos, yPos, 0);

@@ -53,19 +53,37 @@ public class PlayerMovement : MonoBehaviour
         _posX = rotationRadius * _orientation;
         _posY = 0;
         transform.position = new Vector3(_posX, _posY, 0);
+        transform.GetChild(0).transform.localScale = new Vector3(transform.localScale[1], transform.localScale[0], 0);
     }
 
     public void SetNewScale(float parameter)
     {
-        if (parameter > 0 & _maxScale > transform.localScale[_scaleIndex])
+        if (parameter > 0 & _maxScale >= transform.localScale[_scaleIndex] + Vector3.up[1] * parameter)
         {
             transform.localScale += Vector3.up * parameter;
+            transform.GetChild(0).transform.localScale = new Vector3(transform.localScale[1], transform.localScale[0], 0);
+
         }
 
-        if (parameter < 0 & _minScale < transform.localScale[_scaleIndex])
+        if (parameter < 0 & _minScale <= transform.localScale[_scaleIndex] + Vector3.up[1] * parameter)
         {
             transform.localScale += Vector3.up * parameter;
+            transform.GetChild(0).transform.localScale = new Vector3(transform.localScale[1], transform.localScale[0], 0);
         }
+    }
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.GetComponent<Collider2D>().CompareTag("ball"))
+        {
+            Debug.Log(gameObject.name);
+            other.gameObject.GetComponent<Bowl>().SetLastPlayerTouched(gameObject);
+        }
+    }
+
+    public float GetAngle()
+    {
+        return _angle;
     }
 
     public PlayerSide GetPlayerSide()
@@ -130,4 +148,8 @@ public class PlayerMovement : MonoBehaviour
             Move();
         }
     }
+    
+    
+            
+
 }
